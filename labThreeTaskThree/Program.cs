@@ -11,14 +11,16 @@ namespace labThreeTaskThree
 
             double term;
             double nextTerm;
-
-            for (int k = 2; ;)
+            
+            k = 2;
+            
+            double term = GetMember(k);
+            double nextTerm = GetMember(++k);
+            
+            while (Math.Abs(nextTerm - term) >= epsilon)
             {
                 term = GetMember(k);
-                nextTerm = GetMember(++k);
-
-                if (Math.Abs(nextTerm - term) < epsilon)
-                    break;
+                nextTerm = GetMember(++k);   
             }
 
             Console.WriteLine("Первый член числовой последовательности," +
